@@ -2,7 +2,7 @@ ansiColor('xterm') {
 node('rzdockeruat') {
    stage 'Checking out GitHub Repo' 
    //git url: 'https://github.com/TheUncharted/karma-webpack-example.git'
-   git url: 'https://github.com/TheUncharted/karma-browserify-isparta-example.git'
+   git url: 'https://github.com/TheUncharted/example-karma-browserify-babel-istanbul.git'
    
  def maven = docker.build('karma');
  
