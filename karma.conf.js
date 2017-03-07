@@ -5,14 +5,17 @@ module.exports = function (config) {
             'test/*.js'
         ],
         preprocessors: {
+            'test/*.js': 'babelPreprocessor',
             'test/*.js': 'browserify'
         },
         browserify: {
             debug: true,
             transform: [
-                ['babelify', {presets: ['es2016'], plugins: ['istanbul']}]
+                ['babelify', {presets: ['es2015'], plugins: ['istanbul']}]
             ]
         },
+
+
         reporters: ['progress', 'coverage', 'junit'],
         junitReporter: {
             outputDir: 'build/junit/',

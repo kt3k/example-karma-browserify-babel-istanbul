@@ -8,8 +8,10 @@
   "author": "Yoshiya Hinosawa <stibium121@gmail.com> (https://twitter.com/kt3k)",
   "license": "MIT",
   "devDependencies": {
-    "babel-plugin-istanbul": "^3.0.0",
-    "babel-preset-es2016": "^6.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
     "babelify": "^7.3.0",
     "browserify": "^14.1.0",
     "karma": "^1.5.0",
@@ -19,6 +21,9 @@
     "karma-coverage": "^1.1.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^3.2.0",
-    "watchify": "^3.8.0"
+    "watchify": "^3.9.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "karma-babel-preprocessor": "^6.0.1"
   }
 }
