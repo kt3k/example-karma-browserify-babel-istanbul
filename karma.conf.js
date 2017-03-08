@@ -22,6 +22,8 @@ module.exports = function (config) {
             outputFile: 'test-results.xml',
         },
 
+        plugins:['karma-mocha','karma-chrome-launcher','karma-mocha-reporter'],
+        
         mochaReporter: {
           colors: {
             success: 'blue',
