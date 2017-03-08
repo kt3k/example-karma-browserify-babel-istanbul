@@ -10,8 +10,8 @@ ADD . workspace
 
 WORKDIR workspace
 RUN npm install
-RUN npm install --save-dev karma-cli
-RUN npm install --save-dev karma-mocha-reporter
+#RUN npm install --save-dev karma-cli
+#RUN npm install --save-dev karma-mocha-reporter
 
 RUN chmod +x ./entrypoint.sh
 
