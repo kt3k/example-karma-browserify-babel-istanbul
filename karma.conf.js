@@ -22,7 +22,7 @@ module.exports = function (config) {
             outputFile: 'test-results.xml',
         },
 
-        plugins:['karma-mocha','karma-chrome-launcher','karma-mocha-reporter'],
+        plugins:['karma-browserify', 'karma-mocha','karma-chrome-launcher','karma-mocha-reporter'],
         
         mochaReporter: {
           colors: {
