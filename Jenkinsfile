@@ -11,6 +11,7 @@ node('rzdockeruat') {
       // Spin up a Maven container to build the petclinic app from source.
       // First set up a shared Maven repo so we don't need to download all dependencies on every build.
       maven.inside {
+        sh "ls -la"
         sh "chmod +x ./entrypoint.sh"
         sh "./entrypoint.sh"
         sh "ps aux | grep Xvfb"
