@@ -23,7 +23,18 @@ module.exports = function (config) {
         },
 
         mochaReporter: {
-            output: 'autowatch'
+          colors: {
+            success: 'blue',
+            info: 'bgGreen',
+            warning: 'cyan',
+            error: 'bgRed'
+          },
+          symbols: {
+            success: '+',
+            info: '#',
+            warning: '!',
+            error: 'x'
+          }
         },
 
         coverageReporter: {
