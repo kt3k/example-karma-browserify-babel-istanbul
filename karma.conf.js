@@ -25,18 +25,7 @@ module.exports = function (config) {
         plugins:['karma-browserify', 'karma-mocha','karma-chrome-launcher','karma-mocha-reporter', 'karma-coverage', 'karma-junit-reporter'],
         
         mochaReporter: {
-          colors: {
-            success: 'blue',
-            info: 'bgGreen',
-            warning: 'cyan',
-            error: 'bgRed'
-          },
-          symbols: {
-            success: '+',
-            info: '#',
-            warning: '!',
-            error: 'x'
-          }
+         
         },
 
         coverageReporter: {
