@@ -9,7 +9,7 @@ RUN mkdir workspace
 ADD . workspace
 
 WORKDIR workspace
-RUN npm install
+RUN cd /workspace && npm install
 #RUN npm install --save-dev karma-cli
 #RUN npm install --save-dev karma-mocha-reporter
 
