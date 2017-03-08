@@ -16,7 +16,7 @@ module.exports = function (config) {
         },
 
 
-        reporters: ['progress', 'coverage', 'junit'],
+        reporters: ['progress', 'coverage', 'junit', 'mocha'],
         junitReporter: {
             outputDir: 'build/junit/',
             outputFile: 'test-results.xml',
