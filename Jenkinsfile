@@ -4,7 +4,7 @@ node('rzdockeruat') {
    //git url: 'https://github.com/TheUncharted/karma-webpack-example.git'
    git url: 'https://github.com/TheUncharted/example-karma-browserify-babel-istanbul.git'
    
- def maven = docker.build('karma');
+ def maven = docker.build('karmababel');
  
     sh 'chmod +x ./entrypoint.sh'
  stage('Build') {
