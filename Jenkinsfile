@@ -12,8 +12,6 @@ node('rzdockeruat') {
       // First set up a shared Maven repo so we don't need to download all dependencies on every build.
       maven.inside {
         sh "ls -la"
-        sh "npm install"
-        sh "ls -la"
         sh "chmod +x ./entrypoint.sh"
         sh "./entrypoint.sh"
         sh "ps aux | grep Xvfb"
