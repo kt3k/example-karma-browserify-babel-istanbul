@@ -6,6 +6,6 @@ describe('sum', () => {
     assert(sum(1, 2) === 3)
     assert(sum(1, 2, 3) === 6)
     assert(sum(1, 2, 3, 4) === 10)
-    assert(sum(1, 2, 3, 4, 5) === 15)
+    assert(sum(1, 2, 3, 4, 5) === 17)
   })
 })
