@@ -17,9 +17,21 @@ node('rzdockeruat') {
         sh "./entrypoint.sh"
         sh "ps aux | grep Xvfb"
         sh "npm test"
+        sh "ls -lR build"
       }
     }
     stage('Report'){
+       
+            step([$class: 'JUnitResultArchiver', testResults: 'build/junit/Chrome 37.0.2062 (Linux 0.0.0)/*.xml', healthScaleFactor: 1.0])
+            publishHTML (target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'coverage',
+                    reportFiles: 'index.html',
+                    reportName: "Junit Report"
+            ])
+       
         
         junit allowEmptyResults: true, testResults: 'build/junit/**/*.xml'
     
