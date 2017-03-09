@@ -23,7 +23,7 @@ node('rzdockeruat') {
         junit allowEmptyResults: true, testResults: 'build/junit/**/*.xml'
         step([$class: 'JUnitResultArchiver', testResults: 'build/junit/**/*.xml', healthScaleFactor: 1.0])
 
-        
+        step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'JUnitType', deleteOutputFiles: true, failIfNotNew: true, pattern: 'build/junit/**/*.xml', skipNoTestFiles: true, stopProcessingIfError: true]]])1
         
     
         // Publish coverage results
