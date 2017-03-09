@@ -24,7 +24,21 @@ node('rzdockeruat') {
         //step([$class: 'JUnitResultArchiver', testResults: 'build/junit/**/*.xml', healthScaleFactor: 1.0])
 
         //step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'JUnitType', deleteOutputFiles: true, failIfNotNew: true, pattern: 'build/junit/**/*.xml', skipNoTestFiles: true, stopProcessingIfError: true]]])1
-step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1, thresholds: [[$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: ''], [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']], tools: [[$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: true, pattern: 'build/junit/**/*.xml', skipNoTestFiles: false, stopProcessingIfError: true]]])
+step([
+    $class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1,
+    thresholds: [
+        [$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '0', unstableNewThreshold: '', unstableThreshold: ''],
+        [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']
+    ],
+    tools: [[
+        $class: 'UnitTestJunitHudsonTestType',
+        deleteOutputFiles: true,
+        failIfNotNew: true,
+        pattern: 'result.xml',
+        skipNoTestFiles: false,
+        stopProcessingIfError: true
+    ]]
+])
     
         // Publish coverage results
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/coverage/Chrome 37.0.2062 (Linux 0.0.0)/', reportFiles: 'index.html', reportName: 'Coverage Report'])
