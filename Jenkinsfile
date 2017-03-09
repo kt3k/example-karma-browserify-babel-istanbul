@@ -33,10 +33,10 @@ step([
         [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']
     ],
     tools: [[
-        $class: 'UnitTestJunitHudsonTestType',
+        $class: 'JUnitType',
         deleteOutputFiles: true,
         failIfNotNew: true,
-        pattern: 'result.xml',
+        pattern: 'build/junit/**/*.xml',
         skipNoTestFiles: false,
         stopProcessingIfError: true
     ]]
