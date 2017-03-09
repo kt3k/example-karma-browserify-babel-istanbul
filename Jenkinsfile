@@ -16,6 +16,7 @@ node('rzdockeruat') {
         sh "./entrypoint.sh"
         sh "ps aux | grep Xvfb"
         sh "npm test"
+        sh "ls -laR build/junit"
       }
     }
     stage('Report'){
