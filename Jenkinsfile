@@ -26,7 +26,7 @@ ansiColor('xterm') {
             currentBuild.result = 'FAILURE'
          throw err
       } finally {
-         stage('Build') {
+         stage('Report') {
             step([$class: 'JUnitResultArchiver', testResults: '**/reports/junit/*.xml', healthScaleFactor: 1.0])
             publishHTML (target: [
                allowMissing: false,
