@@ -36,7 +36,6 @@ ansiColor('xterm') {
                reportFiles: 'index.html',
                reportName: "Junit Report"
                ])
-            }
          }
       }
     
