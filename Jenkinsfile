@@ -26,19 +26,20 @@ ansiColor('xterm') {
             currentBuild.result = 'FAILURE'
          throw err
       } finally {
-         step([$class: 'JUnitResultArchiver', testResults: '**/reports/junit/*.xml', healthScaleFactor: 1.0])
-         publishHTML (target: [
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: true,
-            reportDir: 'coverage',
-            reportFiles: 'index.html',
-            reportName: "Junit Report"
-            ])
+         stage('Build') {
+            step([$class: 'JUnitResultArchiver', testResults: '**/reports/junit/*.xml', healthScaleFactor: 1.0])
+            publishHTML (target: [
+               allowMissing: false,
+               alwaysLinkToLastBuild: false,
+               keepAll: true,
+               reportDir: 'coverage',
+               reportFiles: 'index.html',
+               reportName: "Junit Report"
+               ])
+            }
+         }
       }
-   
-   
-      
+    
     
    }
 }
