@@ -22,16 +22,8 @@ node('rzdockeruat') {
     }
     stage('Report'){
        
-            step([$class: 'JUnitResultArchiver', testResults: 'build/junit/Chrome 37.0.2062 (Linux 0.0.0)/*.xml', healthScaleFactor: 1.0])
-            publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'coverage',
-                    reportFiles: 'index.html',
-                    reportName: "Junit Report"
-            ])
-       
+        step([$class: 'JUnitResultArchiver', testResults: 'build/junit/**/*.xml', healthScaleFactor: 1.0])
+
         
         junit allowEmptyResults: true, testResults: 'build/junit/**/*.xml'
     
