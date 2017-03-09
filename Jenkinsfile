@@ -28,14 +28,7 @@ ansiColor('xterm') {
       } finally {
          stage('Report') {
             step([$class: 'JUnitResultArchiver', testResults: 'build/junit/**/*.xml', healthScaleFactor: 1.0])
-            publishHTML (target: [
-               allowMissing: false,
-               alwaysLinkToLastBuild: false,
-               keepAll: true,
-               reportDir: 'coverage',
-               reportFiles: 'index.html',
-               reportName: "Junit Report"
-               ])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/coverage/Chrome 37.0.2062 (Linux 0.0.0)/', reportFiles: 'index.html', reportName: 'Coverage Report'])
          }
       }
     
