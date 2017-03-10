@@ -1,6 +1,10 @@
 ansiColor('xterm') {
    node('rzdockeruat') {
       stage 'Checking out GitHub Repo' 
+      
+       // send to Slack
+       slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+      
       //git url: 'https://github.com/TheUncharted/karma-webpack-example.git'
       git url: 'https://github.com/TheUncharted/example-karma-browserify-babel-istanbul.git'
    
