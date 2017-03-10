@@ -11,7 +11,7 @@ import java.util.Optional
 def notifySlack(text, channel, attachments) {
 
     //your  slack integration url
-    def slackURL = 'https://hooks.slack.com/services/AAAA/AAAA' 
+    def slackURL = 'https://hooks.slack.com/services/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' 
     //from the jenkins wiki, you can updload an avatar and
     //use that one
     def jenkinsIcon = 'https://wiki.jenkins-ci.org/download/attachments/327683/JENKINS?version=1&modificationDate=1302750804000'
