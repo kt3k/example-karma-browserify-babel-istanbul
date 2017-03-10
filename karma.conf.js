@@ -34,6 +34,7 @@ module.exports = function (config) {
             reporters: [
                 {type: 'html'},
                 {type: 'text'},
+                {type: 'cobertura'},
                 {type: 'text-summary'}
             ]
         },
